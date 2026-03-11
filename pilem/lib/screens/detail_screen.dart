@@ -80,19 +80,14 @@ class _DetailScreenState extends State<DetailScreen> {
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
                             return Container(
-                              height: 300,
-                              width: double.infinity,
-                              color: Colors.grey.shade300,
-                              child: const Center(
-                                child: Icon(
-                                  Icons.broken_image,
-                                  size: 64,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            );
-                          },
+                              height: 50,
+                              width: 50,
+                              color: Colors.grey,
+                              child: const Icon(Icons.broken_image),
+                              );
+                          }
                         )
+
                       : Container(
                           height: 300,
                           width: double.infinity,

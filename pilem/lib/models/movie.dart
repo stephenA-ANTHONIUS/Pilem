@@ -6,6 +6,7 @@ class Movie {
   final String backdropPath;
   final String releaseDate;
   final double voteAverage;
+  
  
   Movie({
     required this.id, 

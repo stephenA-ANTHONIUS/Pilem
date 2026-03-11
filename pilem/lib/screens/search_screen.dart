@@ -100,40 +100,29 @@ class _SearchScreenState extends State<SearchScreen> {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4),
                     child: ListTile(
-                  leading: movie.posterPath.isNotEmpty
+                      leading: movie.posterPath.isNotEmpty
                       ? Image.network(
                           'https://image.tmdb.org/t/p/w500${movie.posterPath}',
                           height: 50,
                           width: 50,
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
-                            // in case the URL is wrong or image fails to load
                             return Container(
                               height: 50,
                               width: 50,
-                              color: Colors.grey.shade300,
-                              child: const Icon(
-                                Icons.broken_image,
-                                color: Colors.grey,
-                              ),
+                              color: Colors.grey,
+                              child: const Icon(Icons.broken_image),
                             );
                           },
                         )
-                      : Container(
-                          height: 50,
-                          width: 50,
-                          color: Colors.grey.shade300,
-                          child: const Icon(
-                            Icons.movie,
-                            color: Colors.grey,
-                          ),
-                        ),
+                      : const SizedBox(height: 50, width: 50),
+                      
                       title: Text(movie.title),
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetailScreen(movie:movie),
+                            builder: (context) => DetailScreen(movie: movie),
                           ),
                         );
                       },
